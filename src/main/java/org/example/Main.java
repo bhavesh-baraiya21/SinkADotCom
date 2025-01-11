@@ -8,7 +8,7 @@ import java.util.Collections;
 class User {
     private String name;
     private int age;
-    ArrayList<Integer> scores = new ArrayList<Integer>();
+    ArrayList<Integer> scores = new ArrayList<>();
 
     void setName(String name){
         this.name = name;
@@ -35,13 +35,13 @@ class User {
 }
 
 class Game {
-    ArrayList<ArrayList<Integer>> gameGrid = new ArrayList<ArrayList<Integer>>();
-    private int gridLen = 7;
-    ArrayList<Integer> completed = new ArrayList<Integer>();
+    ArrayList<ArrayList<Integer>> gameGrid = new ArrayList<>();
+    private final int gridLen = 7;
+    ArrayList<Integer> completed = new ArrayList<>();
 
     void initialiseGrid(){
         gameGrid.addAll(Collections.nCopies(gridLen,
-                new ArrayList<Integer>(Collections.nCopies(gridLen, 0))));
+                new ArrayList<>(Collections.nCopies(gridLen, 0))));
     }
 
     void placeShip(int shipNo){
@@ -136,7 +136,7 @@ class Game {
                 continue;
             }
 
-            int row = (char)(guess.charAt(0))-'A', col = (char)(guess.charAt(1))-'0';
+            int row = guess.charAt(0)-'A', col = guess.charAt(1)-'0';
 
             if(row >= gridLen || col >= gridLen){
                 System.out.println("Invalid guess... Please try again.");
